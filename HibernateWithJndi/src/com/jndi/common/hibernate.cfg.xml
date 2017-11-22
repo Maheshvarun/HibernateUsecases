@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+	
+	<!-- for oracle -->
+	
+	     <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+	     
+	     <!-- This is we have to ignore if we are using DataSource which is comming out from WebServer/ApplicationServer -->
+	     
+	     <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+		 <property name="hibernate.connection.user">system</property>
+		 <property name="hibernate.connection.password">system</property>
+		
+		 <!-- C3PO Librery
+		 By using Third Party classes we can achieve ConnectioPooling.
+		 Bcz in Hibernate we can  achieve only  20 connections by using internal ConnectionPoolProvider
+		 This will be usefull incase of StandAloneApplications In production we have to use third party Connection pool classes
+		 This is suitable only for StandAloneApplications -->
+	    
+         <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>  
+         <property name="hibernate.c3p0.min_size">1</property>
+         <property name="hibernate.c3p0.max_size">25</property>
+         <property name="hibernate.c3p0.timeout">120</property>
+         <property name="hibernate.c3p0.max_statements">10</property>
+         <property name="hibernate.c3p0.idle_test_period">3000</property>
+         
+         <!-- PROXOOL Library
+         By using Third Party classes we can achieve ConnectioPooling.
+		 Bcz in Hibernate we can  achieve only  20 connections by using internal ConnectionPoolProvider
+		 This will be usefull incase of StandAloneApplications In production we have to use third party Connection pool classes
+		 This is suitable only for StandAloneApplications.This is not working bcz of some jar conflicts problem
+         
+         <property name="hibernate.connection.provider_class">org.hibernate.proxool.internal.ProxoolConnectionProvider</property>
+         <property name="hibernate.proxool.pool_alias">proxool</property>
+         <property name="hibernate.proxool.xml">proxool.xml</property>
+         -->
+         
+          
+        <!-- 
+        This way also we can provide the ConnetionPooling.Insted of depending on Third Party Connetion Pooling, 
+        We can get it from Application Server also. For this we need to provide the Datasource property tag here with that lookup url.
+        That Implementation Of DataSource dependes on WebServer Vendor 
+        
+        <property name="hibernate.connection.datasource">java:comp/env/jdbc/MyLocalDB</property>-->
+        
+		<property name="hibernate.connection.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>	    
+	
+	
+	<!-- for mysql 
+	    
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		 <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatepurpose</property>
+		<property name="hibernate.connection.user">root</property>
+		<property name="hibernate.connection.password">root</property>
+		 <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="hibernate.connection.dialect">org.hibernate.dialect.MYSQLDialect</property>
+		<property name="hibernate.connection.datasource">java:comp/env/jdbc/MyLocalDB</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>-->
+		
+		<mapping resource="com/jndi/common/employee.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>

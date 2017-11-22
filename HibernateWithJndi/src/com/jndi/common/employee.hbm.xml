@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ 	<class name="com.jndi.beans.Employee"   table="HibernateJndiTest">
+ 	 <id name="empid" column="id" length="26"></id>
+ 	 <property name="empname" column="name" length="35"/>
+ 	 <property name="address" column="address" length="80"></property>
+ 	</class>
+ </hibernate-mapping>
