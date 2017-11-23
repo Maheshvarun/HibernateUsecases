@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ 	<filter-def name="myfilter">
+      <filter-param name="myparam" type="string"/>
+    </filter-def>
+    
+ 	 <class name="com.first.dao.Account">
+ 	 <id name="accNo" column="accNo" ></id>
+ 	 <property name="accName" column="accName" />
+ 	 <property name="accBranch" column="accBranch" />
+ 	 <property name="accType" column="accType" />
+ 	 <filter name="myfilter" condition=":myparam=accType" />
+ 	</class>
+ 	
+ </hibernate-mapping>

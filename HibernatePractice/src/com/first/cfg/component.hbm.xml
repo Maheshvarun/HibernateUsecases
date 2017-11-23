@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ 	<class name="com.first.dao.Jober" table="jober1">
+ 	 <id name="eid" column="eid" ></id>
+ 	 <property name="ename" column="ename" />
+ 	     <component name="eaddr" class="com.first.dao.Adress">
+ 	       <property name="pno" column="pno" />
+ 	       <property name="street" column="street"></property>
+ 	     </component>
+ 	     <component name="esal" class="com.first.dao.Salary">
+ 	      <property name="accNo" column="accNo" />
+ 	      <property name="accName" column="accName" />
+ 	      <property name="accType" column="accType" />
+ 	     </component> 
+ 	</class>
+ </hibernate-mapping>

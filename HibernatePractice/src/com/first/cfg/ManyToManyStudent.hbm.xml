@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ 	<class name="com.first.dao.ManyToManyStudent" table="ManyToManyStudent">
+ 	 <id name="sid" column="sid" ></id>
+ 	 <property name="sname" column="sname" />
+ 	     <set name="course" table="student_course" cascade="all" >
+ 	       <key column="studentid" ></key>
+ 	       <many-to-many  column="courseid" class="com.first.dao.ManyToManyCourses" />
+ 	     </set>    
+ 	</class>
+ </hibernate-mapping>

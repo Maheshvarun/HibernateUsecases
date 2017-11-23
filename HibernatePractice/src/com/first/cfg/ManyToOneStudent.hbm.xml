@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ 	<class  name="com.first.dao.ManyToOneStudent" table="manytoonestudent">
+ 	 <id name="sid" column="sid" ></id>
+ 	 <property name="sname" column="sname" />
+ 	 <many-to-one name="bid" class="com.first.dao.ManyToOneBranch" cascade="all"></many-to-one>
+ 	</class>
+ </hibernate-mapping>

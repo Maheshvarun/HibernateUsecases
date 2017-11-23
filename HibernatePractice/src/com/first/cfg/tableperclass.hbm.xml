@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+
+ 	<class name="com.first.dao.TableperClassAccount" table="tableperclassdemo">
+ 	 <id name="accNo" column="accNo" ></id>
+ 	  <discriminator column="type" type="string"></discriminator>
+ 	  <property name="accName" column="accName" />
+ 	
+ 	     
+ 	     <subclass  name="com.first.dao.TableperClassEmployee" discriminator-value="employee" >
+ 	       <property name="eid" column="eid" />
+ 	       <property name="edept" column="edept" />
+ 	     </subclass>
+ 	     
+ 	     <subclass name="com.first.dao.TableperClassStudent" discriminator-value="student">
+ 	      <property name="sid" column="sid" />
+ 	      <property name="sbranch" column="sbranch" />
+ 	     </subclass>
+ 	</class>
+ </hibernate-mapping>

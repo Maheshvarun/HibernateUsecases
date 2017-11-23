@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+
+ 	<class  name="com.first.dao.TableperSubClassEmployee" table="tablepersubclassemployee">
+ 	 <id name="eid" column="eid" ></id>
+ 	 <property name="ename" column="ename" />
+ 	     <joined-subclass name="com.first.dao.TableperSubClassManager" table="tablepersubclassmanager"  >
+ 	       <key column="mid" ></key>
+ 	       <property name="email" column="email" />
+ 	       <property name="adress" column="adress" />
+ 	     </joined-subclass>
+ 	     
+ 	     <joined-subclass name="com.first.dao.TableperSubClassAccountant" table="tablepersubclassaccountant">
+ 	      <key column="aid"></key>
+ 	      <property name="sal" column="sal" />
+ 	      <property name="qul" column="qul" />
+ 	     </joined-subclass>
+ 	     
+ 	</class>
+ </hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ 	<class name="com.first.dao.CacheEmployee" table="CacheEmployee">
+ 	 <!-- <cache usage="read-only" /> -->  
+ 	 <id name="eid" column="eid" ></id>
+ 	 <version name=""></version>
+ 	 <property name="ename" column="ename" />
+ 	 <property name="esal" column="esal" />
+ 	 <property name="eaddr" column="eaddr" />
+ 	</class>
+ </hibernate-mapping>

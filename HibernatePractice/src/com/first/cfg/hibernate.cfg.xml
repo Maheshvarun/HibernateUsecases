@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatepurpose</property>
+		    <property name="hibernate.connection.user">root</property>
+		    <property name="hibernate.connection.password">root</property>
+		    <property name="hibernate.connection.dialect">org.hibernate.dialect.MYSQLDialect</property>
+		    <property name="hbm2ddl.auto">update</property>
+		    <property name="show_sql">true</property>
+		    <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		    <property name="hibernate.c3p0.min_size">7</property>
+		    <property name="hibernate.c3p0.max_size">53</property>
+		    <property name="hibernate.c3p0.timeout">100</property>
+		    <property name="hibernate.c3p0.max_statements">50</property>
+		    <property name="hibernate.c3p0.idle_test_period">1000</property>
+		    <property name="hibernate.c3p0.validate">true</property> 
+		<!--    <property name="hibernate.cache.provider_class">org.hibernate.cache.ehcache</property> 
+		    <property name="hibernate.cache.use_second_level_cache">true</property>
+            
+		    <mapping resource="com\first\cfg\component.hbm.xml"/> 
+			<mapping resource="com\first\cfg\tableperclass.hbm.xml"/>
+			<mapping resource="com\first\cfg\tablepersubclass.hbm.xml"/>
+			<mapping class="com.first.dao.TableperSubClassAnnoEmp" /> 
+			<mapping class="com.first.dao.TableperSubClassAnnoAcco" /> 
+			<mapping class="com.first.dao.TableperSubClassAnnoMana" />     
+		    <mapping resource="com\first\cfg\tableperconcreteclass.hbm.xml"/>
+		    
+		    <mapping resource="com\first\cfg\OneToOneEmployee.hbm.xml"/>
+		    <mapping resource="com\first\cfg\OneToOneAccount.hbm.xml"/>
+			<mapping class="com.first.dao.OneToOneAccountAnno" /> 
+			<mapping class="com.first.dao.OneToOneEmployeeAnno" />
+			
+			<mapping resource="com\first\cfg\OneToManyBranch.hbm.xml"/> 
+			<mapping resource="com\first\cfg\OneToManyStudent.hbm.xml"/> 
+			<mapping class="com.first.dao.OneToManyBranchAnno" /> 
+			<mapping class="com.first.dao.OneToManyStudentAnno" />
+			 
+			
+			<mapping resource="com\first\cfg\ManyToOneStudent.hbm.xml"/> 
+			<mapping resource="com\first\cfg\ManyToOneBranch.hbm.xml"/>
+			<mapping class="com.first.dao.ManyToOneBranchAnno" /> 
+			<mapping class="com.first.dao.ManyToOneStudentAnno" /> 
+			
+			<mapping resource="com\first\cfg\ManyToManyStudent.hbm.xml"/> 
+			<mapping resource="com\first\cfg\ManyToManyCourses.hbm.xml"/>
+			<mapping class="com.first.dao.ManyToManyStudentAnno" /> 
+			<mapping class="com.first.dao.ManyToManyCoursesAnno" />
+
+            <mapping resource="com\first\cfg\primarykeydemo.hbm.xml" />
+			<mapping resource="com\first\cfg\account.hbm.xml"/>
+			<mapping resource="com\first\cfg\employee.hbm.xml"/>
+			<mapping resource="com\first\cfg\cache.hbm.xml" />
+		    <mapping resource="com\first\cfg\ConnectionPollDemo.hbm.xml" />-->
+		    
+		      
+	</session-factory>
+</hibernate-configuration>

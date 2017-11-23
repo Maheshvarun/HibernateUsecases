@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+
+ 	<class  name="com.first.dao.TableperConcreteClassPerson" table="tableperconcreteclassperson">
+ 	 <id name="pnmae" column="pnmae" ></id>
+ 	 <property name="paddr" column="paddr" />
+ 	     <union-subclass name="com.first.dao.TableperConcreteClassEmployee" table="tableperconcreteclassemployee">
+ 	       <property name="eid" column="eid" />
+ 	       <property name="esal" column="esal" />
+ 	     </union-subclass>
+ 	     
+ 	     <union-subclass name="com.first.dao.TableperConcreteClassCustomer" table="tableperconcreteclasscustomer">
+ 	      <property name="cid" column="cid" />
+ 	      <property name="cmobile" column="cmobile" />
+ 	     </union-subclass>
+ 	     
+ 	</class>
+ </hibernate-mapping>

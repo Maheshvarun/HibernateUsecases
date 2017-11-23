@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ 	<class name="com.first.dao.Employee"   table="employee">
+ 	 <id name="empid" column="id" length="25"></id>
+ 	 <property name="empname" column="name" length="35"/>
+ 	 <property name="address" column="address" length="80"></property>
+ 	</class>
+ 	<sql-query name="myquery" >
+ 	<!--  <return-scalar column="name" type="string" />
+ 	 <return-scalar column="address" type="string"/> -->
+ 	 <return class="com.first.dao.Employee"></return>
+ 	 {call myprocedure(?,?)}
+ 	</sql-query>
+ </hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ 	<class  name="com.first.dao.OneToManyBranch" table="OneToManyBranch" lazy="false">
+ 	 <id name="bid" column="bid" ></id>
+ 	 <property name="bname" column="bname" />
+ 	     <set name="stds" cascade="all" table="student_branch" ><!-- even though we place table name it will not create table in db  same for this annotation will create -->
+ 	       <key column="branchid" ></key>
+ 	       <one-to-many  class="com.first.dao.OneToManyStudent" />
+ 	     </set>    
+ 	</class>
+ </hibernate-mapping>
